@@ -103,8 +103,9 @@ def get_the_json(entrada):
       
 
 def get_vinho(obj):
-    df = pd.read_csv('DadosFinaisLimpos.csv')
-    lista_harmo = df['Harmoniza']
+    df = pd.read_csv('CellarFormatada.csv')
+    df = df.drop(columns='Unnamed: 0')
+    lista_harmo = df['harmoniza']
     model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
     lista_embedding = []
     for i in range (len(lista_harmo)):
