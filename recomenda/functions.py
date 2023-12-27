@@ -105,6 +105,7 @@ def get_the_json(entrada):
 def get_vinho(obj):
     df = pd.read_csv('novos.csv')
     df = df.drop(columns='Unnamed: 0')
+    df = df.drop(columns="Unnamed: 0.1")
     lista_harmo = df['harmoniza']
     model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
     lista_embedding = []
